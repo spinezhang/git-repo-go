@@ -408,7 +408,8 @@ func NewProject(mp *manifest.Project, s *RepoSettings, m *manifest.Manifest) *Pr
 	}
 
 	if mp.IsMetaProject() {
-		workDir = filepath.Join(s.TopDir, config.DotRepo, mp.Path)
+		workDir = filepath.Join(s.TopDir, mp.Path)
+		//workDir = filepath.Join(s.TopDir, config.DotRepo, mp.Path)
 		gitDir = filepath.Join(
 			s.TopDir,
 			config.DotRepo,

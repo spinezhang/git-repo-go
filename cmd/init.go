@@ -248,7 +248,7 @@ func (v initCommand) Execute(args []string) error {
 		v.ws.ManifestProject.SetRevision(v.O.ManifestBranch)
 	} else if isNew {
 		log.Debugf("set manifest project new setup revision to %s", "master")
-		v.ws.ManifestProject.SetRevision("master")
+		v.ws.ManifestProject.SetRevision("main")
 	}
 
 	// Update manifest project settings
@@ -375,7 +375,7 @@ Either delete the .repo folder in this workspace, or initialize in another locat
 		if isNew || v.ws.ManifestProject.GetHead() == "" {
 			if !common.IsImmutable(v.ws.ManifestProject.Revision) {
 				// Recreate default branch.
-				err := v.ws.ManifestProject.StartBranch("default", "", true)
+				err := v.ws.ManifestProject.StartBranch("main", "", true)
 				if err != nil {
 					return fmt.Errorf("cannot create default in manifest: %s", err)
 				}

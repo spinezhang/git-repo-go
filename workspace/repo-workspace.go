@@ -34,7 +34,8 @@ type RepoWorkSpace struct {
 
 // Exists checks whether workspace is exist.
 func Exists(dir string) bool {
-	manifestsDir := filepath.Join(dir, config.DotRepo, config.Manifests)
+	//manifestsDir := filepath.Join(dir, config.DotRepo, config.Manifests)
+	manifestsDir := filepath.Join(dir, config.Manifests)
 	if _, err := os.Stat(filepath.Join(manifestsDir, ".git")); err != nil {
 		return false
 	}
@@ -82,8 +83,10 @@ func (v *RepoWorkSpace) SaveConfig(cfg goconfig.GitConfig) error {
 
 // LinkManifest creates link of manifest.xml.
 func (v *RepoWorkSpace) LinkManifest() error {
-	srcAbs := filepath.Join(v.RootDir, config.DotRepo, config.Manifests, v.Settings().ManifestName)
-	srcRel := filepath.Join(config.Manifests, v.Settings().ManifestName)
+	//srcAbs := filepath.Join(v.RootDir, config.DotRepo, config.Manifests, v.Settings().ManifestName)
+	//srcRel := filepath.Join(config.Manifests, v.Settings().ManifestName)
+	srcAbs := filepath.Join(v.RootDir, config.Manifests, v.Settings().ManifestName)
+	srcRel := filepath.Join("../", config.Manifests, v.Settings().ManifestName)
 
 	if !path.Exist(srcAbs) {
 		return fmt.Errorf("link manifest failed, cannot find file '%s'", srcRel)
