@@ -82,7 +82,7 @@ Just like repo for the Android world, git-repo is a command line tool for
 centralized git workflow of git core.
 
 It can handle multiple repositories by using a manifest repository with
-a default.xml file. And it can also handle a single repository by using
+a manifest.xml file. And it can also handle a single repository by using
 a '--single' opiton.
 
 This tool is renamed as git-repo, so that wen can create git alias to run

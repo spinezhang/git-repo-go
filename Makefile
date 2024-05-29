@@ -9,11 +9,11 @@ else
     GOTEST := GO111MODULE=on go test
 endif
 
-ifeq ($(shell uname), Darwin)
-    TAR=gtar
-else
+# ifeq ($(shell uname), Darwin)
+#     TAR=gtar
+# else
     TAR=tar
-endif
+# endif
 
 GOBUILD_LINUX_64 := env GOOS=linux GOARCH=amd64 $(GOBUILD)
 GOBUILD_LINUX_32 := env GOOS=linux GOARCH=386 $(GOBUILD)

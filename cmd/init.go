@@ -88,7 +88,7 @@ func (v *initCommand) Command() *cobra.Command {
 	v.cmd.Flags().StringVarP(&v.O.ManifestName,
 		"manifest-name",
 		"m",
-		"default.xml",
+		"manifest.xml",
 		"initial manifest file")
 	v.cmd.Flags().BoolVarP(&v.O.DetachHead,
 		"detach",

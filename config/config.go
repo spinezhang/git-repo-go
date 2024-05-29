@@ -65,7 +65,7 @@ const (
 
 	ManifestsDotGit  = "manifests.git"
 	Manifests        = "manifests"
-	DefaultXML       = "default.xml"
+	DefaultXML       = "manifest.xml"
 	ManifestXML      = "manifest.xml"
 	LocalManifestXML = "local_manifest.xml"
 	LocalManifests   = "local_manifests"
